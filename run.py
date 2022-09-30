@@ -434,20 +434,18 @@ def place_one_block(board, mode=1):
     # corners
     elif row == 0 and col == 0:
         return validate_and_place_corner_ships(validate_00_corner_ships_area(board, row, col), board, row, col, mode)
-    elif row == 0 and col in list(range(4,bd_size)):
+    elif row == 0 and col in list(range(4, bd_size)):
         return validate_and_place_corner_ships(validate_04_corner_ships_area(board, row, col), board, row, col, mode)
-    elif row in list(range(4,bd_size)) and col == 0:
+    elif row in list(range(4, bd_size)) and col == 0:
         return validate_and_place_corner_ships(validate_40_corner_ships_area(board, row, col), board, row, col, mode)
     elif row in list(range(4,bd_size)) and col in list(range(4, bd_size)):
         return validate_and_place_corner_ships(validate_44_corner_ships_area(board, row, col), board, row, col, mode)
-
 
     else:
         return False
 
 
 # ------VALIDATE AND PLACE TWO BLOCK SHIPS-------
-
 
 
 def place_two_block(board, mode=1):
@@ -460,7 +458,6 @@ def place_two_block(board, mode=1):
         direction = ai_random_direction()
         direction = direction.upper()
         row, col = ai_random()
-
 
     if direction == 'H':
 
@@ -502,7 +499,7 @@ def place_two_block(board, mode=1):
     elif direction == 'V':
              # inner ships
         if row in list(range(1, bd_size-2)) and col in list(range(1, bd_size-1)):
-            return validate_and_place_vertical_ships(validate_inner_ship_vertical(board, row, col),board, row, col, mode)
+            return validate_and_place_vertical_ships(validate_inner_ship_vertical(board, row, col), board, row, col, mode)
         
          # edges
         if row in list(range(1, bd_size-2)) and col == 0:
@@ -528,7 +525,7 @@ def place_two_block(board, mode=1):
             return validate_and_place_vertical_ships(validate_04_corner_ship_vertical(board,row, col), board, row, col, mode)
 
         elif row in list(range(3, bd_size-8)) and col in list(range(4, bd_size)):
-            return validate_and_place_vertical_ships(validate_34_corner_ship_vertical(board,row, col), board, row, col, mode)
+            return validate_and_place_vertical_ships(validate_34_corner_ship_vertical(board, row, col), board, row, col, mode)
         
     
 
@@ -597,7 +594,6 @@ def main_placing_ships(mode=1):
         player_1_two_blockx = 3
         player_2_one_blockx = 4
         player_2_two_blockx = 3
-
 
     if bd_size in [8,9]:
         player_1_one_block = 5
