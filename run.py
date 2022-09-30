@@ -3,6 +3,7 @@ import string
 import os
 from time import sleep
 
+
 class bcolors:
     UNDERLINE = '\033[4m' 
     Blue = '\033[104m'
@@ -13,6 +14,7 @@ class bcolors:
     ALERT = '\033[43m'
     NDC = '\033[0m'
     FAIL = '\033[41m'
+
 
 def ai_random():
     global bd_size
@@ -27,7 +29,6 @@ def ai_random_direction():
     return dir
 
 
-
 def get_bd_size():
     alphabet = string.ascii_lowercase
     size = input('Select grid size from 5 to 10: ')
@@ -39,6 +40,7 @@ def get_bd_size():
 
 
 bd_size = get_bd_size()
+
 
 def ai_translate(row, col):
     alphabet = string.ascii_uppercase
@@ -69,17 +71,17 @@ def print_board(board):
 
 def print_board_yield(board):
     num = 1
-    yield('\n')
+    yield ('\n')
     list_of_nums = []
     for row in board:
         list_of_nums.append(str(num))
         num += 1
     string_of_nums = ' '.join(list_of_nums)
-    yield(f'    {bcolors.BOLD}{string_of_nums}{bcolors.NDC}')
-    yield('  ' + num * '--')
+    yield (f'    {bcolors.BOLD}{string_of_nums}{bcolors.NDC}')
+    yield ('  ' + num * '--')
     ch = 'A'
     for row in board:
-        yield(f"{bcolors.BOLD}{ch}{bcolors.NDC} | {' '.join(row)}")
+        yield (f"{bcolors.BOLD}{ch}{bcolors.NDC} | {' '.join(row)}")
         ch = chr(ord(ch) + 1)
 
 
@@ -413,10 +415,10 @@ def place_one_block(board, mode=1):
     if mode == 1:
         row, col = get_coordinates_ship(board)
     else:
-        row, col = ai_random()
+        row, col = ai_random()       
+    # inners
 
-    # inners  
-    if row in list(range(1, bd_size-1)) and col in list(range(1,bd_size-1)):
+    if row in list(range(1, bd_size-1)) and col in list(range(1, bd_size-1)):
         return validate_and_place_inner(board, row, col, mode)
 
      # edges
@@ -424,7 +426,7 @@ def place_one_block(board, mode=1):
         return validate_and_place_wall_ships(validate_upper_wall_ships(board, row, col), board, row, col, mode)
     elif col == 0 and row in list(range(1, bd_size-1)):
         return validate_and_place_wall_ships(validate_left_wall_ships(board, row, col), board, row, col, mode)
-    elif row in list(range(4, bd_size)) and col in list(range(1,bd_size-1)):
+    elif row in list(range(4, bd_size)) and col in list(range(1, bd_size-1)):
         return validate_and_place_wall_ships(validate_bottom_wall_ships(board, row, col), board, row, col, mode)
     elif row in list(range(1, bd_size-1)) and col in list(range(4, bd_size)):
         return validate_and_place_wall_ships(validate_right_wall_ships(board, row, col), board, row, col, mode)
@@ -595,7 +597,6 @@ def main_placing_ships(mode=1):
         player_1_two_blockx = 3
         player_2_one_blockx = 4
         player_2_two_blockx = 3
-
 
 
     if bd_size in [8,9]:
