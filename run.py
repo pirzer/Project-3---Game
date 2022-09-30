@@ -4,7 +4,7 @@ import os
 from time import sleep
 
 class bcolors:
-    UNDERLINE = '\033[4m'    
+    UNDERLINE = '\033[4m' 
     Blue = '\033[104m'
     CYAN = '\033[96m'
     GREEN = '\033[92m'
@@ -534,7 +534,8 @@ def place_two_block(board, mode=1):
             print(bcolors.ALERT + 'Wrong location for ships' + bcolors.NDC)
             return place_two_block(board, mode)
     
-    else: return False
+    else: 
+        return False
 
 
 def placing_ships(player_board, ships_1, ships_2, mode, ship1, ship2):
@@ -835,8 +836,8 @@ def main_menu():
     while mode not in (1, 2):
         try:
             mode = int(input('''    💀 👊 Are you ready for this Battle 👊 💀? ?? 
-            1 - 💀  💀          More than 1 player
-            2 - 💀              One player\n'''))
+            1 - 💀  💀      More than 1 player
+            2 - 💀          One player\n '''))
         except ValueError:
             print('Enter 1 or 2: ')
     bullet = 0
