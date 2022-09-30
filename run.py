@@ -421,7 +421,7 @@ def place_one_block(board, mode=1):
     if row in list(range(1, bd_size-1)) and col in list(range(1, bd_size-1)):
         return validate_and_place_inner(board, row, col, mode)
 
-     # edges
+    # edges
     elif row == 0 and col in list(range(1, bd_size-1)):
         return validate_and_place_wall_ships(validate_upper_wall_ships(board, row, col), board, row, col, mode)
     elif col == 0 and row in list(range(1, bd_size-1)):
@@ -438,7 +438,7 @@ def place_one_block(board, mode=1):
         return validate_and_place_corner_ships(validate_04_corner_ships_area(board, row, col), board, row, col, mode)
     elif row in list(range(4, bd_size)) and col == 0:
         return validate_and_place_corner_ships(validate_40_corner_ships_area(board, row, col), board, row, col, mode)
-    elif row in list(range(4,bd_size)) and col in list(range(4, bd_size)):
+    elif row in list(range(4, bd_size)) and col in list(range(4, bd_size)):
         return validate_and_place_corner_ships(validate_44_corner_ships_area(board, row, col), board, row, col, mode)
 
     else:
@@ -461,7 +461,7 @@ def place_two_block(board, mode=1):
 
     if direction == 'H':
 
-         # inner ships
+        # inner ships
         if row in list(range(1, bd_size-1)) and col in list(range(1, bd_size-2)):
             return validate_and_place_horizontal_ships(validate_inner_ship_horizontal(board, row, col), board, row, col, mode)
 
@@ -490,18 +490,16 @@ def place_two_block(board, mode=1):
         elif row in list(range(4, bd_size)) and col in list(range(3, bd_size-1)):
             return validate_and_place_horizontal_ships(validate_43_corner_ship_horizontal(board, row, col), board, row, col, mode)
       
-
-
         elif row in list(range(0, bd_size)) and col in list(range(4, bd_size)):
             print(bcolors.ALERT + 'Wrong location for ships' + bcolors.NDC)
             return place_two_block(board, mode)
 
     elif direction == 'V':
-             # inner ships
+        # inner ships
         if row in list(range(1, bd_size-2)) and col in list(range(1, bd_size-1)):
             return validate_and_place_vertical_ships(validate_inner_ship_vertical(board, row, col), board, row, col, mode)
         
-         # edges
+        # edges
         if row in list(range(1, bd_size-2)) and col == 0:
             return validate_and_place_vertical_ships(vertical_left_edges(board, row, col), board, row, col, mode)
 
@@ -516,19 +514,17 @@ def place_two_block(board, mode=1):
         # corner ships
 
         elif row == 0 and col == 0:
-            return validate_and_place_vertical_ships(validate_00_corner_ship_vertical(board,row, col), board, row, col, mode)
+            return validate_and_place_vertical_ships(validate_00_corner_ship_vertical(board, row, col), board, row, col, mode)
 
         elif row in list(range(3, bd_size-1)) and col == 0:
-            return validate_and_place_vertical_ships(validate_30_corner_ship_vertical(board,row, col), board, row, col, mode)
+            return validate_and_place_vertical_ships(validate_30_corner_ship_vertical(board, row, col), board, row, col, mode)
 
         elif row == 0 and col in list(range(4, bd_size)):
-            return validate_and_place_vertical_ships(validate_04_corner_ship_vertical(board,row, col), board, row, col, mode)
+            return validate_and_place_vertical_ships(validate_04_corner_ship_vertical(board, row, col), board, row, col, mode)
 
         elif row in list(range(3, bd_size-8)) and col in list(range(4, bd_size)):
             return validate_and_place_vertical_ships(validate_34_corner_ship_vertical(board, row, col), board, row, col, mode)
-        
-    
-
+         
         elif row in list(range(4, bd_size)) and col in list(range(0, bd_size)):
             print(bcolors.ALERT + 'Wrong location for ships' + bcolors.NDC)
             return place_two_block(board, mode)
@@ -571,9 +567,7 @@ def main_placing_ships(mode=1):
     player2_b = [['0']*bd_size for x in range(bd_size)]
     player1_hidden_b = [['0']*bd_size for x in range(bd_size)]
     player2_hidden_b = [['0']*bd_size for x in range(bd_size)]
-
-
-    
+ 
     player_1_one_block = 3
     player_1_two_block = 2
     player_2_one_block = 3
@@ -584,7 +578,7 @@ def main_placing_ships(mode=1):
     player_2_one_blockx = 3
     player_2_two_blockx = 2
 
-    if bd_size in [6,7]:
+    if bd_size in [6, 7]:
         player_1_one_block = 4
         player_1_two_block = 3
         player_2_one_block = 4
@@ -595,7 +589,7 @@ def main_placing_ships(mode=1):
         player_2_one_blockx = 4
         player_2_two_blockx = 3
 
-    if bd_size in [8,9]:
+    if bd_size in [8, 9]:
         player_1_one_block = 5
         player_1_two_block = 4
         player_2_one_block = 5
