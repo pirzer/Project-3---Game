@@ -1,0 +1,32 @@
+[debug] [2022-09-29T16:43:16.228Z] ----------------------------------------------------------------------
+[debug] [2022-09-29T16:43:16.230Z] Command:       /home/gitpod/.nvm/versions/node/v16.13.0/bin/node /home/gitpod/.nvm/versions/node/v16.13.0/bin/firebase login
+[debug] [2022-09-29T16:43:16.231Z] CLI Version:   11.11.0
+[debug] [2022-09-29T16:43:16.231Z] Platform:      linux
+[debug] [2022-09-29T16:43:16.231Z] Node Version:  v16.13.0
+[debug] [2022-09-29T16:43:16.231Z] Time:          Thu Sep 29 2022 16:43:16 GMT+0000 (Coordinated Universal Time)
+[debug] [2022-09-29T16:43:16.231Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=467263448&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-09-29T16:43:22.264Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2022-09-29T16:43:22.264Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"95ea0c4b-1ea2-48a1-90aa-cd0438366f49"}
+[debug] [2022-09-29T16:43:23.432Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2022-09-29T16:43:23.432Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"kn43m3WVlcUJQQg_2qUmDos9cOn1H13quaYpdwSCdBU"}
+[info] 
+[info] To sign in to the Firebase CLI:
+[info] 
+[info] 1. Take note of your session ID:
+[info] 
+[info]    95EA0
+[info] 
+[info] 2. Visit the URL below on any device and follow the instructions to get your code:
+[info] 
+[info]    https://auth.firebase.tools/login?code_challenge=ocMpZbnSO9dLpkzwt55EAd3DtiD__nEqFjx0s9QGesQ&session=95ea0c4b-1ea2-48a1-90aa-cd0438366f49&attest=kn43m3WVlcUJQQg_2qUmDos9cOn1H13quaYpdwSCdBU
+[info] 
+[info] 3. Paste or enter the authorization code below once you have it:
+[info] 
